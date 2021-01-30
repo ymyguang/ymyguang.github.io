@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="云服务器hexo搭建踩坑记前言最近网课结束了，之前在阿里云领的服务器安装的是window系统，目的是刷网课，好的是网课结束了，于是乎就又把服务器安装上了centos了，自己水平很菜，有又什么新奇的玩法，就打算那服务当作博客使用。当初使用的博客程序是：wordpress，对于操作来说基本上是傻瓜式的，所以我想试试用Hexo搭建一个博客。 那就再网上找搭建教程，本以为搭建的过程会很顺利，但是我完全高估">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo搭建博客">
+<meta property="og:url" content="http://youguang.xyz/2020/06/28/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="有光">
+<meta property="og:description" content="云服务器hexo搭建踩坑记前言最近网课结束了，之前在阿里云领的服务器安装的是window系统，目的是刷网课，好的是网课结束了，于是乎就又把服务器安装上了centos了，自己水平很菜，有又什么新奇的玩法，就打算那服务当作博客使用。当初使用的博客程序是：wordpress，对于操作来说基本上是傻瓜式的，所以我想试试用Hexo搭建一个博客。 那就再网上找搭建教程，本以为搭建的过程会很顺利，但是我完全高估">
+<meta property="og:image" content="http://youguang.xyz/2020/06/28/aimg/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200628174528421.png">
+<meta property="article:published_time" content="2020-06-28T09:58:20.101Z">
+<meta property="article:modified_time" content="2020-06-28T09:58:20.125Z">
+<meta property="article:author" content="有光">
+<meta property="article:tag" content="编程，分享，思考，点滴，随笔">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://youguang.xyz/2020/06/28/aimg/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200628174528421.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://youguang.xyz/2020/06/28/hexo搭建博客/"/>
+
+
+
+
+
+  <title>hexo搭建博客 | 有光</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">有光</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://youguang.xyz/2020/06/28/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="有光">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有光">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">hexo搭建博客</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T17:58:20+08:00">
+                2020-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="云服务器hexo搭建踩坑记"><a href="#云服务器hexo搭建踩坑记" class="headerlink" title="云服务器hexo搭建踩坑记"></a>云服务器hexo搭建踩坑记</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近网课结束了，之前在阿里云领的服务器安装的是window系统，目的是刷网课，好的是网课结束了，于是乎就又把服务器安装上了centos了，自己水平很菜，有又什么新奇的玩法，就打算那服务当作博客使用。当初使用的博客程序是：wordpress，对于操作来说基本上是傻瓜式的，所以我想试试用Hexo搭建一个博客。</p>
+<p>那就再网上找搭建教程，本以为搭建的过程会很顺利，但是我完全高估了自己的水平了，哈哈，错误频出，曾今一度陷入大坑。经过1天的折腾，博客最起码可以访问了。</p>
+<p>在这里，我们直接用ftp向云服务传送写好的文档，免去的git安装的操作，配置更加简单。（仅限云服务器，GitHub还是需要git的）</p>
+<h3 id="踩坑一-困惑"><a href="#踩坑一-困惑" class="headerlink" title="踩坑一:困惑"></a>踩坑一:困惑</h3><p>当我在网络上搜索时，网上的都是hexo+GitHub的博客搭建教程（我自己有服务器，其实是不需要用GitHub），刚开始的时候，我跟着一步一步的做，越做越困惑，跟GitHub有什么关系？我有自己的服务器呀！                                             所以在这里说一下为什么有GitHub：</p>
+<p>首先众所周知，GitHub是全球最大的同性交友网站，<del>起作用就是交友</del>，是用来同步自己的代码的。当然玩法也不止如此。再来看看hexo是什么东东。</p>
+<blockquote>
+<p>Hexo是一个快速、简洁且高效的博客框架。 Hexo使用Markdown解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 </p>
+</blockquote>
+<p>没错，hexo并不是一个博客程序，而是一个markdown转html等文件的转换工具！！！！明白这一点，就很好说了。</p>
+<p>hexo+GitHub的工作原理：</p>
+<p>​        1. 自己在本机写好markdown文档</p>
+<p>​        2. hexo经过一系列的处理将文件转换成html等文件</p>
+<ol start="3">
+<li>通过git远程pull将hexo生成的文件推送到GitHub内。</li>
+</ol>
+<p>由于GitHub支持html等文件的渲染和解析，当我们直接访问GitHub中的io域名时，就可以访问到网站了（静态网站）但是有时候GitHub系列的网站在大陆不是很稳定，所以可以结合云服务器来搭建博客。此时云服务器就是一个展示的功能。当我们使用云服务情况下，相比GitHub来展示博客而言，云服务（安装Nginx）会更简便一下。</p>
+<h3 id="踩坑二：报错"><a href="#踩坑二：报错" class="headerlink" title="踩坑二：报错"></a>踩坑二：报错</h3><p>在执行：hexo init 或者是不管执行啥命令都会返回usage，</p>
+<p><img src="../aimg/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200628174528421.png" alt="image-20200628174528421"></p>
+<p>通过一阵子的搜索，发现了问题！没有在hexo的目录文件下执行hexo命令，直接设置环境环境变量还是可以解决的（我估计时安装hexo不完整，包管理程序安装的软件一般都会自己设置系统变量的）</p>
+<h3 id="踩坑三：本地图片测试正常，但是网页上却不再显示"><a href="#踩坑三：本地图片测试正常，但是网页上却不再显示" class="headerlink" title="踩坑三：本地图片测试正常，但是网页上却不再显示"></a>踩坑三：本地图片测试正常，但是网页上却不再显示</h3><h4 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h4><p>经过测试发现，在md中所写的图片地址，是在public的相对地址，但是在本地的typora软件中，相对的是md的相对地址，而最终网页展示的html文件，因此网页段是相对于html的相对路径。两种参考路径不同，肯定会发生本地显示正常（相对md的相对路径），网页不显示图片（相对html的相对路径）</p>
+<h4 id="解决方式："><a href="#解决方式：" class="headerlink" title="解决方式："></a>解决方式：</h4><p>尽管是在 本地编辑md文件，但是写相对地址的时，要参照html的文件写地址（经测试url填写绝对路径时，图片仍然失效）</p>
+<p>具体步骤 如下：</p>
+<ol>
+<li><p>将所有的文件放在一个文件夹内，且该文件夹内，又可以细分子文件夹来存放图片；</p>
+</li>
+<li><p>相对路径时上一个目录下的img文件，这样设置以后能在本地直接看到图片</p>
+</li>
+<li><p>将img文件同步到public内，如此一来生成的html文件也能够按照相对路径的位置，找到指定的图片。</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/28/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" rel="next" title="静态博客">
+                <i class="fa fa-chevron-left"></i> 静态博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/29/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/" rel="prev" title="扫盲字符编码">
+                扫盲字符编码 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">有光</p>
+              <p class="site-description motion-element" itemprop="description">非淡泊无以明志，非宁静无以致远</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#云服务器hexo搭建踩坑记"><span class="nav-number">1.</span> <span class="nav-text">云服务器hexo搭建踩坑记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#踩坑一-困惑"><span class="nav-number">1.2.</span> <span class="nav-text">踩坑一:困惑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#踩坑二：报错"><span class="nav-number">1.3.</span> <span class="nav-text">踩坑二：报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#踩坑三：本地图片测试正常，但是网页上却不再显示"><span class="nav-number">1.4.</span> <span class="nav-text">踩坑三：本地图片测试正常，但是网页上却不再显示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题原因"><span class="nav-number">1.4.1.</span> <span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方式："><span class="nav-number">1.4.2.</span> <span class="nav-text">解决方式：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">有光</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

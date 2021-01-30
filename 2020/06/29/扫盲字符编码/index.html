@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="扫盲字符编码引言想必大家之前一定 会被字符编码困惑。ASCII，GB2312，Unicode，GB18030等等，或者说大家遇到过文件乱码问题。那么这一系列的编码到底是什么？他们之间又会有什么区别？又为什么产生乱码问题？ 1.背景大家应该知道，我们现在的计算机都是二进制，在通俗的来讲，就是01构成！那么问题来了。我们人类交流的主要方式是语言，而语言往往是由大量的符号构成的，所以很自然的就会想到使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="扫盲字符编码">
+<meta property="og:url" content="http://youguang.xyz/2020/06/29/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/index.html">
+<meta property="og:site_name" content="有光">
+<meta property="og:description" content="扫盲字符编码引言想必大家之前一定 会被字符编码困惑。ASCII，GB2312，Unicode，GB18030等等，或者说大家遇到过文件乱码问题。那么这一系列的编码到底是什么？他们之间又会有什么区别？又为什么产生乱码问题？ 1.背景大家应该知道，我们现在的计算机都是二进制，在通俗的来讲，就是01构成！那么问题来了。我们人类交流的主要方式是语言，而语言往往是由大量的符号构成的，所以很自然的就会想到使用">
+<meta property="og:image" content="http://youguang.xyz/2020/06/29/aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629084559853.png">
+<meta property="og:image" content="http://youguang.xyz/2020/06/29/aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629085140082.png">
+<meta property="og:image" content="http://youguang.xyz/2020/06/29/aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629090542466.png">
+<meta property="og:image" content="http://youguang.xyz/2020/06/29/aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629091027164.png">
+<meta property="og:image" content="http://youguang.xyz/2020/06/29/aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629093733790.png">
+<meta property="article:published_time" content="2020-06-29T01:49:14.479Z">
+<meta property="article:modified_time" content="2020-06-29T02:08:01.190Z">
+<meta property="article:author" content="有光">
+<meta property="article:tag" content="编程，分享，思考，点滴，随笔">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://youguang.xyz/2020/06/29/aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629084559853.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://youguang.xyz/2020/06/29/扫盲字符编码/"/>
+
+
+
+
+
+  <title>扫盲字符编码 | 有光</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">有光</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://youguang.xyz/2020/06/29/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="有光">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有光">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">扫盲字符编码</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-29T09:49:14+08:00">
+                2020-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="扫盲字符编码"><a href="#扫盲字符编码" class="headerlink" title="扫盲字符编码"></a>扫盲字符编码</h2><h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><p>想必大家之前一定 会被字符编码困惑。ASCII，GB2312，Unicode，GB18030等等，或者说大家遇到过文件乱码问题。那么这一系列的编码到底是什么？他们之间又会有什么区别？又为什么产生乱码问题？</p>
+<h4 id="1-背景"><a href="#1-背景" class="headerlink" title="1.背景"></a>1.背景</h4><p>大家应该知道，我们现在的计算机都是二进制，在通俗的来讲，就是01构成！那么问题来了。我们人类交流的主要方式是语言，而语言往往是由大量的<strong>符号</strong>构成的，所以很自然的就会想到使用二进制编码，对应到指定的符号，即一个唯一的编码对应一个唯一的符号。在这里说两个概念；</p>
+<ul>
+<li><p><strong>字符集：一堆符号的<code>集合</code>，里面包含了符号，文字，图形符号，数字，甚至可以是表情包。（对于人的字符集合）</strong></p>
+</li>
+<li><p><strong>字符编码：一套<code>规则</code>。使一个二进制代码对应到一个符号的规则。一串00101010的代码，规则A就可以把他读成：0010 1010（读取两次），而规则B就把他读成：”00101010“</strong></p>
+</li>
+</ul>
+<p>细心的读者可能有所发现，没错，上面的那些ASCII等，都有自己的字符集和字符编码，其中字符编码就一一对应自己字符集内的所有内容</p>
+<h4 id="2-ASCII"><a href="#2-ASCII" class="headerlink" title="2.ASCII"></a>2.ASCII</h4><p>当初计算机是在美国流行起来的，所以当他们考虑计算机显示文字的问题时，想到的肯定只有字母。于是乎，ASCII（<strong>A</strong>merican <strong>S</strong>tandard <strong>C</strong>ode for <strong>I</strong>nformation <strong>I</strong>nterchange，<strong>美国信息交换标准代码</strong>）编码便呼之欲出。</p>
+<p>下图便是ASCII表（数字代码和符号的对应关系）</p>
+<p><img src="../aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629084559853.png" alt="image-20200629084559853"></p>
+<h5 id="具体规则"><a href="#具体规则" class="headerlink" title="具体规则"></a><strong>具体规则</strong></h5><p><strong>在ASCII中规定：一个字节所对应一个符号</strong>。在计算机中，一个字节包含8位，一个字节所能表示的不同状态也只有：256个(<img src="../aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629085140082.png" alt="image-20200629085140082" style="zoom: 50%;" />)&gt;) 。就像上图：符号A，所对应的数字编码为：0100 0001。</p>
+<p>但是需要注意的是在ASCII字符集中，只有128个符号，因此ASCII内，128的对应关系。其中前32个符号，是非显示字符（计算机显示）。</p>
+<p>随着计算机的发展到欧洲，由于欧洲人们也有着自己的语言，于是就对ASCII进行了拓展，把剩下的128个也建立了对应关系，来表示欧洲地区的字符，并命名为：EASCII</p>
+<h4 id="3-非ASCII编码"><a href="#3-非ASCII编码" class="headerlink" title="3.非ASCII编码"></a>3.非ASCII编码</h4><h6 id="3-1GBXXXX字符集-amp-编码"><a href="#3-1GBXXXX字符集-amp-编码" class="headerlink" title="3.1GBXXXX字符集&amp;编码"></a>3.1GBXXXX字符集&amp;编码</h6><p>聪明的各位可能就就要问了，欧洲，美洲都把256个对应关系都用光了，我们大中国怎么办？我们博大精深的文字如何表示？此时此刻，<strong>GBXXXX字符集&amp;编码</strong>就诞生了！（这里的X仅代表数字）。</p>
+<p>GB开头的就是我们中国的字符编码。GB就是<strong>国标</strong>的首字母大写。下面的图是2312的对应规则。</p>
+<p><img src="../aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629090542466.png" alt="image-20200629090542466"></p>
+<p><strong>具体规则：</strong></p>
+<p><strong>在GB2312中规定：<code>两</code>个字节所对应一个符号。</strong></p>
+<p>Q：为什么ASCII一个字节表示，而GB2312用两个符号表示？</p>
+<p>A：亲，因为咱们的字多呀！两个字节可以有65536个对应状态（<img src="../aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629091027164.png" alt="image-20200629091027164" style="zoom: 67%;" />）</p>
+<h6 id="3-2Unicode编码"><a href="#3-2Unicode编码" class="headerlink" title="3.2Unicode编码"></a>3.2<strong>Unicode</strong>编码</h6><p>可能又要有人问了，不同国家的字符编码不同，那么如何保证信息的准确性？如果我在中国写好的文档，跑到美国去，那我的文档岂不是要乱了？<strong>其实在Unicode没有出世之前的确是这个样子的</strong>。随着互联网的出现，全世界的人们都在用自己的语言去共享着信息，如果所使用编码不统一，势必会产生乱码的情况的。</p>
+<p>那么只有一个解决方式：<strong>将世界上所有的文字都去遵循同一种编码方式</strong>。这个方法看样子是不是很难实现？但是他已经被Unicode去实现了，所以Unicode是一个很伟大的编码方式；</p>
+<blockquote>
+<p><strong>Unicode</strong>（中文：万国码、国际码、统一码、单一码）是<a href="https://zh.wikipedia.org/wiki/電腦科學" target="_blank" rel="noopener">计算机科学</a>领域里的一项业界标准。它对世界上大部分的<a href="https://zh.wikipedia.org/wiki/文字系統" target="_blank" rel="noopener">文字系统</a>进行了整理、编码，使得电脑可以用更为简单的方式来呈现和处理文字。</p>
+</blockquote>
+<p>说人话就是：将世界上所有的符号都纳入其中，并且都有与之对应的关系；</p>
+<p>（最新的Unicode14.0编码规范要在2021年3月发布，由于疫情故推迟到2021年9月发表。）</p>
+<h6 id="3-3-UTF-8编码"><a href="#3-3-UTF-8编码" class="headerlink" title="3.3 UTF-8编码"></a>3.3 UTF-8编码</h6><p>在Unicode<strong>值得注意的是</strong>：Unicode仅仅规范了符号的编码方式，但是对于存储的方式并没有对此说明。</p>
+<p>因为有的符号仅需要一个字节，有的需要多个字节。比如，汉字<code>严</code>的 Unicode 是十六进制数<code>4E25</code>，转换成二进制数足足有15位（<code>100111000100101</code>），也就是说，这个符号的表示至少需要2个字节。表示其他更大的符号，可能需要3个字节或者4个字节，甚至更多。如果全都以：四个字节去存储，由于较小值的编码点一般使用频率较高，直接使用Unicode编码效率低下，大量浪费内存空间。UTF-8就是来解决这个问题的。即解决Unicode存储问题。（后面的8就是以8位为单元进行编码）</p>
+<p>UTF-8的编码规范：</p>
+<blockquote>
+<p>1）对于单字节的符号，字节的第一位设为<code>0</code>，后面7位为这个符号的 Unicode 码。因此对于英语字母，UTF-8 编码和 ASCII 码是相同的。</p>
+<p>2）对于<code>n</code>字节的符号（<code>n &gt; 1</code>），第一个字节的前<code>n</code>位都设为<code>1</code>，第<code>n + 1</code>位设为<code>0</code>，后面字节的前两位一律设为<code>10</code>。剩下的没有提及的二进制位，全部为这个符号的 Unicode 码。</p>
+</blockquote>
+<p><img src="../aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629093733790.png" alt="image-20200629093733790"></p>
+<h4 id="4-结束"><a href="#4-结束" class="headerlink" title="4.结束"></a>4.结束</h4><p>至此，计算机表示语言的方式（即编码规范）基本大势已定，绝大多数都是Unicode编码，UTF-8存储。从此以后互联时代得到了飞速发展。全世界人们尽管语言不同，但是表示语言的方式完全统一！使得全球互联，世界互惠，人们互通！故此致敬各位前辈在字符编码上所付出的努力！</p>
+<p>参考文献：</p>
+<p><a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="noopener">ASCII，Unicode 和 UTF-8  By阮一峰的网络日志</a></p>
+<p><a href="https://zh.wikipedia.org/wiki/UTF-8#UTF-8的編碼方式" target="_blank" rel="noopener">UTF-8 By维基百科</a></p>
+<p><a href="https://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html" target="_blank" rel="noopener">字符集和字符编码 By吴秦</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/28/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="next" title="hexo搭建博客">
+                <i class="fa fa-chevron-left"></i> hexo搭建博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/29/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90%60$'r'%60%E6%8A%A5%E9%94%99/" rel="prev" title="linux无法解析`$'r'`报错">
+                linux无法解析`$'r'`报错 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">有光</p>
+              <p class="site-description motion-element" itemprop="description">非淡泊无以明志，非宁静无以致远</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#扫盲字符编码"><span class="nav-number">1.</span> <span class="nav-text">扫盲字符编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引言"><span class="nav-number">1.0.1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-背景"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-ASCII"><span class="nav-number">1.0.3.</span> <span class="nav-text">2.ASCII</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#具体规则"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">具体规则</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-非ASCII编码"><span class="nav-number">1.0.4.</span> <span class="nav-text">3.非ASCII编码</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#3-1GBXXXX字符集-amp-编码"><span class="nav-number">1.0.4.0.1.</span> <span class="nav-text">3.1GBXXXX字符集&amp;编码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-2Unicode编码"><span class="nav-number">1.0.4.0.2.</span> <span class="nav-text">3.2Unicode编码</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-3-UTF-8编码"><span class="nav-number">1.0.4.0.3.</span> <span class="nav-text">3.3 UTF-8编码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-结束"><span class="nav-number">1.0.5.</span> <span class="nav-text">4.结束</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">有光</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
