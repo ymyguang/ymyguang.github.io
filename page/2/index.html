@@ -82,7 +82,7 @@
 <meta name="description" content="非淡泊无以明志，非宁静无以致远">
 <meta property="og:type" content="website">
 <meta property="og:title" content="有光">
-<meta property="og:url" content="https://youguang.xyz/page/2/index.html">
+<meta property="og:url" content="ymyguang.github.io/page/2/index.html">
 <meta property="og:site_name" content="有光">
 <meta property="og:description" content="非淡泊无以明志，非宁静无以致远">
 <meta property="article:author" content="有光">
@@ -117,7 +117,7 @@
 
 
 
-  <link rel="canonical" href="https://youguang.xyz/page/2/"/>
+  <link rel="canonical" href="ymyguang.github.io/page/2/"/>
 
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youguang.xyz/2020/06/28/%E6%80%9D%E7%A7%91%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="ymyguang.github.io/2021/01/30/Python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="有光">
@@ -250,7 +250,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/28/%E6%80%9D%E7%A7%91%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/" itemprop="url">思科—网络安全笔记</a></h1>
+                <a class="post-title-link" href="/2021/01/30/Python/" itemprop="url">Python</a></h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,549 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T16:55:53+08:00">
-                2020-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-30T21:22:04+08:00">
+                2021-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Python入门"><a href="#Python入门" class="headerlink" title="Python入门"></a>Python入门</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>之前对python比较排斥，一直认为是现在的氛围而已，但是昨天用shell创建一些自动化任务的时候，感觉到脚本语言是如此的方便，远比C来的快，那就学学python！！</p>
+<p>Python给我的感觉是很类似C，但是在数据类型方面。要优于C很多，不再需要考虑数据类型。也不再需要考虑高精度。</p>
+<p>编程语言尽管语法都不尽相同，但是整体思路都是一样的，并且都可以运行在 同一的软件和硬件上。因此相差不会很大的。（架构什么的暂且不去考虑）</p>
+<h3 id="一些小知识"><a href="#一些小知识" class="headerlink" title="一些小知识"></a>一些小知识</h3><p>Python的确是很方便，但是毕竟是一个<code>解释语言</code>，执行速度一般来说是比不上<code>编译语言</code>的</p>
+<p>说一下两种语言的区别：</p>
+<ul>
+<li>解释语言：有很多，JavaScrip也是解释语言，这类语言拿到的就是一个源文件，不需要编译直接就可以运行，所以就强制开源了。在执行的过程中，还需要解释器一句一句的去解释，解释完之后在执行，相对较慢。脚本语言也是解释型语言的一种。</li>
+<li>编译语言：很经典的就是C了，起初先是由编译器将代码编译成exe文件，因为exe是直接编译的二进制文件，因此执行速度会很快。</li>
+</ul>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h3><h5 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输入</span></span><br><span class="line">name = input();<span class="comment">#括号中可以填写文字，用于提示输入。</span></span><br></pre></td></tr></table></figure>
+
+<p>值得注意的是：如果在绝大多数语言中，字符串都是需要加引号的。因此input()括号内的字符串也是需要加双引号的（单引号亦可）</p>
+<p>例如：input(“请输入：”)</p>
+<h5 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h5><p>相对于输入，输出就有点小东西了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 								print用法</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1.没有分号</span></span><br><span class="line">print()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.字符串还是需要加引号</span></span><br><span class="line">print(<span class="string">"hello world"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.转移字符为：\，初次之外r''引号之间的就是需要原样输出的内容，直接忽略各种转义字符</span></span><br><span class="line">print(<span class="string">'I\'m a boy'</span>)    </span><br><span class="line">print(<span class="string">r"I'm a boy \!\！"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.长文本输入（换行）'''我是内容'''   输出结果中：自动换行！默认是字符串格式</span></span><br><span class="line">print(<span class="string">'''                  </span></span><br><span class="line"><span class="string">我</span></span><br><span class="line"><span class="string">是</span></span><br><span class="line"><span class="string">内</span></span><br><span class="line"><span class="string">容'''</span>)</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="ymyguang.github.io/2021/01/30/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E7%AD%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="有光">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有光">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/01/30/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E7%AD%89/" itemprop="url">函数重载等</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-30T21:22:04+08:00">
+                2021-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="函数重载，内敛，默认参数值"><a href="#函数重载，内敛，默认参数值" class="headerlink" title="函数重载，内敛，默认参数值"></a><strong>函数重载，内敛，默认参数值</strong></h3><h3 id="重载"><a href="#重载" class="headerlink" title="重载"></a><strong>重载</strong></h3><p><strong>在C++中，两个函数的名称可以相同，编译器可以通过形参的个数，类型进行判断调用哪一个函数；</strong></p>
+<blockquote>
+<h4 id="重载函数就是名字完全一样，但是参数类型、个数或者顺序不一样的函数。重载函数主要用来对付不同类型的数据。"><a href="#重载函数就是名字完全一样，但是参数类型、个数或者顺序不一样的函数。重载函数主要用来对付不同类型的数据。" class="headerlink" title="重载函数就是名字完全一样，但是参数类型、个数或者顺序不一样的函数。重载函数主要用来对付不同类型的数据。"></a><strong>重载函数就是名字完全一样，但是参数类型、个数或者顺序不一样的函数。重载函数主要用来对付不同类型的数据。</strong></h4></blockquote>
+<h3 id="默认参数值"><a href="#默认参数值" class="headerlink" title="默认参数值"></a><strong>默认参数值</strong></h3><p><strong>默认参数值就是在定义函数的同时给参数赋值。使得参数有初始值。</strong></p>
+<p><strong>注意，在使用默认参数值时，只能从函数的右端进行初始化操作，在给含有默认参数值的函数传值的时候，只能是从左往右传值</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f1</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y ,<span class="keyword">int</span> z = <span class="number">1</span>)</span><span class="comment">//这里就是所说的：从右往左进行初始化</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f2</span><span class="params">(<span class="keyword">int</span> x = <span class="number">1</span>, <span class="keyword">int</span> y, <span class="keyword">int</span> z )</span><span class="comment">//这里就是错误的示范</span></span></span><br><span class="line"><span class="function"><span class="comment">// 传值</span></span></span><br><span class="line">f1(1,1) 因为z含有默认值，所以这里可以传递两个参数</span><br><span class="line">f1(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>)<span class="comment">// 亦可</span></span><br><span class="line">f1(, <span class="number">1</span>)<span class="comment">// 这里的传值没有从左往右开始，因此会报错</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="内敛函数-inline"><a href="#内敛函数-inline" class="headerlink" title="内敛函数 inline"></a>内敛函数 inline</h3><p><strong>目的：解决系统的开销</strong></p>
+<p><strong>原理：将inline函数的代码块直接拷贝到调用处。省去了普通函数先从寄存器存值，流程跳转的过程，从而提高了程序效率。</strong></p>
+<p><strong>缺点：增加程序的大小</strong></p>
+<p><strong>注意：，因此在使用内敛函数的时候，往往是那些：频繁使用且代码量较小的函数</strong></p>
+<p><strong>此外：内联函数的处理实在编译器预处理的过程，并且编译器 有权利判断是否 执行内敛操作（编辑器尽自己最大努力去拷贝函数，但是不一定能成功）</strong></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="ymyguang.github.io/2021/01/30/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90%60$'r'%60%E6%8A%A5%E9%94%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="有光">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有光">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/01/30/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90%60$'r'%60%E6%8A%A5%E9%94%99/" itemprop="url">linux无法解析`$'r'`报错</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-30T21:22:04+08:00">
+                2021-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="linux无法解析-’-r’-报错"><a href="#linux无法解析-’-r’-报错" class="headerlink" title="linux无法解析`$’\r’`报错"></a>linux无法解析`$’\r’`报错</h2><p>今天在Windows上编写好shell脚本，在本地测试时成功的，但是当我把脚本放到服务器上，centos的系统上运行时，报错。</p>
+<p><img src="../aimg/'rn%E6%8A%A5%E9%94%99/image-20200629150115314.png" alt="image-20200629150115314"></p>
+<p>我对比了自己的shell文件，并没有发现<strong>’$’\r’‘</strong>这个符号，自己很是困惑，把这个关键词放在加上Linux在Google搜索后，才发现时Windows换行符于Linux的换行符不相同的原因导致的！</p>
+<p>在Windows中，换行符是：\r\n</p>
+<p>而Linux系统中，换行符是：\n</p>
+<p>所以在Linux内肯定没办法执行。我在notepad++中，将CRLF模式切换成LF模式后，顺利解决；</p>
+<p>其他解决方案安装插件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install dos2unix  # 此插件作用就是解决换行不兼容问题</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h4 id="在这里说一下：CRLF以及LF"><a href="#在这里说一下：CRLF以及LF" class="headerlink" title="在这里说一下：CRLF以及LF"></a>在这里说一下：CRLF以及LF</h4><p>两者都是换行的意思，一个是在windows下，一个是在Linux下。</p>
+<p>其中</p>
+<ul>
+<li>CR(Carriage Return) 代表回车，对应字符 <code>&#39;\r&#39;</code>；</li>
+<li>LF(Line Feed) 代表换行，对应字符 <code>&#39;\n&#39;</code>；</li>
+</ul>
+<h4 id="有关回车和换行的背景"><a href="#有关回车和换行的背景" class="headerlink" title="有关回车和换行的背景"></a>有关回车和换行的背景</h4><blockquote>
+<p>在计算机还没有出现之前，有一种叫做电传打字机（Teletype Model 33，Linux/Unix下的tty概念也来自于此）的玩意，每秒钟可以打10个字符。但是它有一个问题，就是打完一行换行的时候，要用去0.2秒，正好可以打两个字符。要是在这0.2秒里面，又有新的字符传过来，那么这个字符将丢失。</p>
+<p>于是，研制人员想了个办法解决这个问题，就是在每行后面加两个表示结束的字符。一个叫做“回车”，告诉打字机把打印头定位在左边界；另一个叫做“换行”，告诉打字机把纸向下移一行。这就是“换行”和“回车”的来历，从它们的英语名字上也可以看出一二。</p>
+<p>后来，计算机发明了，这两个概念也就被般到了计算机上。那时，存储器很贵，一些科学家认为在每行结尾加两个字符太浪费了，加一个就可以。于是，就出现了分歧。</p>
+<p>Unix系统里，每行结尾只有“&lt;换行&gt;”，即”\n”；Windows系统里面，每行结尾是“&lt;换行&gt;&lt;回车 &gt;”，即“\n\r”；Mac系统里，每行结尾是“&lt;回车&gt;”，即”\r”；。一个直接后果是，Unix/Mac系统下的文件在 Windows里打开的话，所有文字会变成一行；而Windows里的文件在Unix/Mac下打开的话，在每行的结尾可能会多出一个^M符号。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="ymyguang.github.io/2021/01/30/%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="有光">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有光">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/01/30/%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/" itemprop="url">基础语句</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-30T21:22:04+08:00">
+                2021-01-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="C-相比C中的改进"><a href="#C-相比C中的改进" class="headerlink" title="C++相比C中的改进"></a>C++相比C中的改进</h3><h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><p>C++中的For循环变得更加简洁，对For进行了扩增，就像Python中的for一样；</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[] = &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i : a)&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;<span class="comment">//输出结果就是a中的值，其过程就是将a中的所有元素依次赋给i，之后输出i。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;i : a)&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;<span class="comment">//对数组a中的值进行直接操作，此时for的先决条件变成了：auto &amp;i ,也就是将a中的元素的地址给i，或者是说，i在每次循环的过程中，就是a元素的地址</span></span><br></pre></td></tr></table></figure>
+
+<p>示例代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[] = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">4</span> &#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> i : a) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span>&amp; i : a) &#123;</span><br><span class="line">		i = <span class="number">2</span> * i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> i : a) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="If-and-Switch-Statement-with-an-Initializer"><a href="#If-and-Switch-Statement-with-an-Initializer" class="headerlink" title="If and Switch Statement with an Initializer"></a>If and Switch Statement with an Initializer</h3><h4 id="Why-add-an-Initializer-in-If-anf-Switch"><a href="#Why-add-an-Initializer-in-If-anf-Switch" class="headerlink" title="Why add an Initializer in If anf Switch?"></a>Why add an Initializer in If anf Switch?</h4><ul>
+<li>The variable, which ought to be limited in <em>if</em> block, leaks into the surrounding scope (本应限制于if块的变量，侵入了周边的作用域)</li>
+<li>The compiler can better optimize the code if it knows explicitly the scope of the variable is only in one <em>if</em> block (若编译器确知变量作用域限于if块，则可更好地优化代码)</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="ymyguang.github.io/2021/01/30/%E6%80%9D%E7%A7%91%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="有光">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有光">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/01/30/%E6%80%9D%E7%A7%91%E2%80%94%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/" itemprop="url">思科—网络安全笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-30T21:22:04+08:00">
+                2021-01-30
               </time>
             
 
@@ -404,7 +945,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youguang.xyz/2020/06/28/%E5%A4%9A%E9%87%8D%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80%E5%85%B3%E7%B3%BB/">
+    <link itemprop="mainEntityOfPage" href="ymyguang.github.io/2021/01/30/%E5%A4%9A%E9%87%8D%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80%E5%85%B3%E7%B3%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="有光">
@@ -423,7 +964,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/28/%E5%A4%9A%E9%87%8D%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80%E5%85%B3%E7%B3%BB/" itemprop="url">多重数组地址关系</a></h1>
+                <a class="post-title-link" href="/2021/01/30/%E5%A4%9A%E9%87%8D%E6%95%B0%E7%BB%84%E5%9C%B0%E5%9D%80%E5%85%B3%E7%B3%BB/" itemprop="url">多重数组地址关系</a></h1>
         
 
         <div class="post-meta">
@@ -435,8 +976,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T16:55:53+08:00">
-                2020-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-30T21:22:04+08:00">
+                2021-01-30
               </time>
             
 
@@ -530,7 +1071,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youguang.xyz/2020/06/28/%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/">
+    <link itemprop="mainEntityOfPage" href="ymyguang.github.io/2021/01/30/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="有光">
@@ -549,7 +1090,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/28/%E5%9F%BA%E7%A1%80%E8%AF%AD%E5%8F%A5/" itemprop="url">基础语句</a></h1>
+                <a class="post-title-link" href="/2021/01/30/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/" itemprop="url">扫盲字符编码</a></h1>
         
 
         <div class="post-meta">
@@ -561,8 +1102,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T16:55:53+08:00">
-                2020-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-30T21:22:04+08:00">
+                2021-01-30
               </time>
             
 
@@ -601,576 +1142,48 @@
       
         
           
-            <h3 id="C-相比C中的改进"><a href="#C-相比C中的改进" class="headerlink" title="C++相比C中的改进"></a>C++相比C中的改进</h3><h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><p>C++中的For循环变得更加简洁，对For进行了扩增，就像Python中的for一样；</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a[] = &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> i : a)&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;<span class="comment">//输出结果就是a中的值，其过程就是将a中的所有元素依次赋给i，之后输出i。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;i : a)&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;<span class="comment">//对数组a中的值进行直接操作，此时for的先决条件变成了：auto &amp;i ,也就是将a中的元素的地址给i，或者是说，i在每次循环的过程中，就是a元素的地址</span></span><br></pre></td></tr></table></figure>
-
-<p>示例代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a[] = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">4</span> &#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> i : a) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span>&amp; i : a) &#123;</span><br><span class="line">		i = <span class="number">2</span> * i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> i : a) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="If-and-Switch-Statement-with-an-Initializer"><a href="#If-and-Switch-Statement-with-an-Initializer" class="headerlink" title="If and Switch Statement with an Initializer"></a>If and Switch Statement with an Initializer</h3><h4 id="Why-add-an-Initializer-in-If-anf-Switch"><a href="#Why-add-an-Initializer-in-If-anf-Switch" class="headerlink" title="Why add an Initializer in If anf Switch?"></a>Why add an Initializer in If anf Switch?</h4><ul>
-<li>The variable, which ought to be limited in <em>if</em> block, leaks into the surrounding scope (本应限制于if块的变量，侵入了周边的作用域)</li>
-<li>The compiler can better optimize the code if it knows explicitly the scope of the variable is only in one <em>if</em> block (若编译器确知变量作用域限于if块，则可更好地优化代码)</li>
+            <h2 id="扫盲字符编码"><a href="#扫盲字符编码" class="headerlink" title="扫盲字符编码"></a>扫盲字符编码</h2><h4 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h4><p>想必大家之前一定 会被字符编码困惑。ASCII，GB2312，Unicode，GB18030等等，或者说大家遇到过文件乱码问题。那么这一系列的编码到底是什么？他们之间又会有什么区别？又为什么产生乱码问题？</p>
+<h4 id="1-背景"><a href="#1-背景" class="headerlink" title="1.背景"></a>1.背景</h4><p>大家应该知道，我们现在的计算机都是二进制，在通俗的来讲，就是01构成！那么问题来了。我们人类交流的主要方式是语言，而语言往往是由大量的<strong>符号</strong>构成的，所以很自然的就会想到使用二进制编码，对应到指定的符号，即一个唯一的编码对应一个唯一的符号。在这里说两个概念；</p>
+<ul>
+<li><p><strong>字符集：一堆符号的<code>集合</code>，里面包含了符号，文字，图形符号，数字，甚至可以是表情包。（对于人的字符集合）</strong></p>
+</li>
+<li><p><strong>字符编码：一套<code>规则</code>。使一个二进制代码对应到一个符号的规则。一串00101010的代码，规则A就可以把他读成：0010 1010（读取两次），而规则B就把他读成：”00101010“</strong></p>
+</li>
 </ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youguang.xyz/2020/06/28/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E7%AD%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="有光">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="有光">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/28/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E7%AD%89/" itemprop="url">函数重载等</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T16:55:53+08:00">
-                2020-06-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="函数重载，内敛，默认参数值"><a href="#函数重载，内敛，默认参数值" class="headerlink" title="函数重载，内敛，默认参数值"></a><strong>函数重载，内敛，默认参数值</strong></h3><h3 id="重载"><a href="#重载" class="headerlink" title="重载"></a><strong>重载</strong></h3><p><strong>在C++中，两个函数的名称可以相同，编译器可以通过形参的个数，类型进行判断调用哪一个函数；</strong></p>
+<p>细心的读者可能有所发现，没错，上面的那些ASCII等，都有自己的字符集和字符编码，其中字符编码就一一对应自己字符集内的所有内容</p>
+<h4 id="2-ASCII"><a href="#2-ASCII" class="headerlink" title="2.ASCII"></a>2.ASCII</h4><p>当初计算机是在美国流行起来的，所以当他们考虑计算机显示文字的问题时，想到的肯定只有字母。于是乎，ASCII（<strong>A</strong>merican <strong>S</strong>tandard <strong>C</strong>ode for <strong>I</strong>nformation <strong>I</strong>nterchange，<strong>美国信息交换标准代码</strong>）编码便呼之欲出。</p>
+<p>下图便是ASCII表（数字代码和符号的对应关系）</p>
+<p><img src="../aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629084559853.png" alt="image-20200629084559853"></p>
+<h5 id="具体规则"><a href="#具体规则" class="headerlink" title="具体规则"></a><strong>具体规则</strong></h5><p><strong>在ASCII中规定：一个字节所对应一个符号</strong>。在计算机中，一个字节包含8位，一个字节所能表示的不同状态也只有：256个(<img src="../aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629085140082.png" alt="image-20200629085140082" style="zoom: 50%;" />)&gt;) 。就像上图：符号A，所对应的数字编码为：0100 0001。</p>
+<p>但是需要注意的是在ASCII字符集中，只有128个符号，因此ASCII内，128的对应关系。其中前32个符号，是非显示字符（计算机显示）。</p>
+<p>随着计算机的发展到欧洲，由于欧洲人们也有着自己的语言，于是就对ASCII进行了拓展，把剩下的128个也建立了对应关系，来表示欧洲地区的字符，并命名为：EASCII</p>
+<h4 id="3-非ASCII编码"><a href="#3-非ASCII编码" class="headerlink" title="3.非ASCII编码"></a>3.非ASCII编码</h4><h6 id="3-1GBXXXX字符集-amp-编码"><a href="#3-1GBXXXX字符集-amp-编码" class="headerlink" title="3.1GBXXXX字符集&amp;编码"></a>3.1GBXXXX字符集&amp;编码</h6><p>聪明的各位可能就就要问了，欧洲，美洲都把256个对应关系都用光了，我们大中国怎么办？我们博大精深的文字如何表示？此时此刻，<strong>GBXXXX字符集&amp;编码</strong>就诞生了！（这里的X仅代表数字）。</p>
+<p>GB开头的就是我们中国的字符编码。GB就是<strong>国标</strong>的首字母大写。下面的图是2312的对应规则。</p>
+<p><img src="../aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629090542466.png" alt="image-20200629090542466"></p>
+<p><strong>具体规则：</strong></p>
+<p><strong>在GB2312中规定：<code>两</code>个字节所对应一个符号。</strong></p>
+<p>Q：为什么ASCII一个字节表示，而GB2312用两个符号表示？</p>
+<p>A：亲，因为咱们的字多呀！两个字节可以有65536个对应状态（<img src="../aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629091027164.png" alt="image-20200629091027164" style="zoom: 67%;" />）</p>
+<h6 id="3-2Unicode编码"><a href="#3-2Unicode编码" class="headerlink" title="3.2Unicode编码"></a>3.2<strong>Unicode</strong>编码</h6><p>可能又要有人问了，不同国家的字符编码不同，那么如何保证信息的准确性？如果我在中国写好的文档，跑到美国去，那我的文档岂不是要乱了？<strong>其实在Unicode没有出世之前的确是这个样子的</strong>。随着互联网的出现，全世界的人们都在用自己的语言去共享着信息，如果所使用编码不统一，势必会产生乱码的情况的。</p>
+<p>那么只有一个解决方式：<strong>将世界上所有的文字都去遵循同一种编码方式</strong>。这个方法看样子是不是很难实现？但是他已经被Unicode去实现了，所以Unicode是一个很伟大的编码方式；</p>
 <blockquote>
-<h4 id="重载函数就是名字完全一样，但是参数类型、个数或者顺序不一样的函数。重载函数主要用来对付不同类型的数据。"><a href="#重载函数就是名字完全一样，但是参数类型、个数或者顺序不一样的函数。重载函数主要用来对付不同类型的数据。" class="headerlink" title="重载函数就是名字完全一样，但是参数类型、个数或者顺序不一样的函数。重载函数主要用来对付不同类型的数据。"></a><strong>重载函数就是名字完全一样，但是参数类型、个数或者顺序不一样的函数。重载函数主要用来对付不同类型的数据。</strong></h4></blockquote>
-<h3 id="默认参数值"><a href="#默认参数值" class="headerlink" title="默认参数值"></a><strong>默认参数值</strong></h3><p><strong>默认参数值就是在定义函数的同时给参数赋值。使得参数有初始值。</strong></p>
-<p><strong>注意，在使用默认参数值时，只能从函数的右端进行初始化操作，在给含有默认参数值的函数传值的时候，只能是从左往右传值</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f1</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y ,<span class="keyword">int</span> z = <span class="number">1</span>)</span><span class="comment">//这里就是所说的：从右往左进行初始化</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f2</span><span class="params">(<span class="keyword">int</span> x = <span class="number">1</span>, <span class="keyword">int</span> y, <span class="keyword">int</span> z )</span><span class="comment">//这里就是错误的示范</span></span></span><br><span class="line"><span class="function"><span class="comment">// 传值</span></span></span><br><span class="line">f1(1,1) 因为z含有默认值，所以这里可以传递两个参数</span><br><span class="line">f1(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>)<span class="comment">// 亦可</span></span><br><span class="line">f1(, <span class="number">1</span>)<span class="comment">// 这里的传值没有从左往右开始，因此会报错</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="内敛函数-inline"><a href="#内敛函数-inline" class="headerlink" title="内敛函数 inline"></a>内敛函数 inline</h3><p><strong>目的：解决系统的开销</strong></p>
-<p><strong>原理：将inline函数的代码块直接拷贝到调用处。省去了普通函数先从寄存器存值，流程跳转的过程，从而提高了程序效率。</strong></p>
-<p><strong>缺点：增加程序的大小</strong></p>
-<p><strong>注意：，因此在使用内敛函数的时候，往往是那些：频繁使用且代码量较小的函数</strong></p>
-<p><strong>此外：内联函数的处理实在编译器预处理的过程，并且编译器 有权利判断是否 执行内敛操作（编辑器尽自己最大努力去拷贝函数，但是不一定能成功）</strong></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youguang.xyz/2020/06/28/V2ray%E6%B5%81%E9%87%8F%E6%B5%81%E9%80%9A%E8%BF%87%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="有光">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="有光">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/28/V2ray%E6%B5%81%E9%87%8F%E6%B5%81%E9%80%9A%E8%BF%87%E7%A8%8B/" itemprop="url">V2ray流量流通过程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T16:55:53+08:00">
-                2020-06-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="V2ray流量流通过程"><a href="#V2ray流量流通过程" class="headerlink" title="V2ray流量流通过程"></a>V2ray<strong>流量流通过程</strong></h3><p>代理方式为：全局模式，软件将所有的流量均通过V2ray，但是此时还没有传输到远端服务器</p>
-<p>路由方式：全局模式，流经到软件的流量不进行特征判断，均使流量通过远端服务器传输。</p>
-<p>代理方式：PAC模式，符合PAC的流量将流入到软件内。（此状态时系统决定是否将来流量包出入给软件）</p>
-<p>路由方式：绕过大陆，V2ray对流入的流量进行特征判断，当流量目的地属于大陆地区则使该流量走本机，若不符合就走远端服务器</p>
-<p><strong>一个推荐的设置方法：系统代理设置为PAC，V2ray流量设置为全局。此方式的效果是只要通过符合PAC的地址，系统就把流量发送给软件，只要是进入软件的流量都走云端。</strong></p>
-<p>之前找了很多PAC的规则，但是都是说法不一，自己只好试了一下，这才得到的方法；<br>在我的软件版本中，使用用户编辑的规则，同步到本地的PAC文件内，会使内容变化，故直接在pac文件内直接编辑即可。<br><code>pac规则</code><br><code>@@  -&gt; 排除</code><br><code>|| -&gt; 所有域名均走自定义,例如 :  &quot;||baidu.com&quot;,   就代表百度的所有域名均走自定义.</code></p>
-<p><strong>当用户规则无效时，可以直接在pac文件中的任意位置编辑即可。</strong></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youguang.xyz/2020/06/28/using/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="有光">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="有光">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/28/using/" itemprop="url">using</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T16:55:53+08:00">
-                2020-06-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="uisng-typedef-define区别"><a href="#uisng-typedef-define区别" class="headerlink" title="uisng , typedef ,define区别"></a><strong>uisng , typedef ,define</strong>区别</h3><h4 id="using新类型的声明："><a href="#using新类型的声明：" class="headerlink" title="using新类型的声明："></a>using新类型的声明：</h4><p>在我们定义一个常指针常量的变量的时候会输入：const int * const p 很明显这里会输入很长的一段代码；</p>
-<p>在C中，可以使用：typedef const int* const MyCCP </p>
-<p>​            这里要注意与define进行区分，define的使用方法是：</p>
-<p>​            #define PI 3.14 也就是 #define MACROT something</p>
-<p>​            typedef const int* const MyCCP 也就是：typedef Some type NewTypeName</p>
-<p>一言蔽之就是：两者定义的位置相反</p>
-<p>但是在C++中，引入using就变得显而易见。</p>
-<p>例如上面的：    typedef const int* const MyCCP。</p>
-<p>就可以写成：    using MyCCP = const int * const </p>
-<p> 但是在using中不能使用：using in = std::cin ，是因为using的表达式只能是类型，不能是一个对象！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youguang.xyz/2020/06/28/SSH%E5%8E%9F%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="有光">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="有光">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/28/SSH%E5%8E%9F%E7%90%86/" itemprop="url">SSH原理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T16:55:52+08:00">
-                2020-06-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="SSH原理（非对称加密）"><a href="#SSH原理（非对称加密）" class="headerlink" title="SSH原理（非对称加密）"></a>SSH原理（非对称加密）</h2><ol>
-<li><h4 id="什么是SSH？"><a href="#什么是SSH？" class="headerlink" title="什么是SSH？"></a>什么是SSH？</h4></li>
-</ol>
-<p>​    SSH是一种协议标准，通常用于主机之间的加密通讯，SSH之前，互联网通讯传输的数据是以明文传输的。</p>
-<ol start="2">
-<li><h4 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h4></li>
-</ol>
-<p><strong>对称加密</strong>（私钥加密）</p>
-<ul>
-<li><p>加密使用同一种密钥，此加密方式，在传输过程中能保证信息很难被破破解，但是有一个致命的确定：很难保证密钥不被泄露。原因是：把自己的密钥放在很多服务器上，一点其中的服务器被攻破，那么与其他的服务器通讯时，采用同一种密钥，此时，信息将被泄露。此时产生了：非对称加密；</p>
-</li>
-<li><p><strong>通讯过程</strong></p>
-<p>本地通过密钥加密，发送至服务端</p>
-<p>服务端的到信息后，按照同样的密钥解密</p>
-</li>
-<li><p><img src="https://mmbiz.qpic.cn/mmbiz_png/9hC98DMUibTUNUul0KenWlLmOy1Lqp7mQB1utOiblsyy5D8v7CynunsvcgmWkzncCj3EqQFLj4sV27YYZuUDaR9w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
-</li>
-</ul>
-<h3 id="非对称加密（公钥加密）："><a href="#非对称加密（公钥加密）：" class="headerlink" title="非对称加密（公钥加密）："></a><strong>非对称加密（公钥加密）</strong>：</h3><h5 id="公钥加密，私钥解密。私钥解密，公钥解密，也称公开密钥加密"><a href="#公钥加密，私钥解密。私钥解密，公钥解密，也称公开密钥加密" class="headerlink" title="公钥加密，私钥解密。私钥解密，公钥解密，也称公开密钥加密"></a><strong>公钥加密，私钥解密。私钥解密，公钥解密</strong>，也称公开密钥加密</h5><blockquote>
-<p>如果你问我，哪一种<a href="http://zh.wikipedia.org/wiki/算法" target="_blank" rel="noopener">算法</a>最重要？</p>
-<p>我可能会回答<a href="http://zh.wikipedia.org/wiki/公钥密码学" target="_blank" rel="noopener">“公钥加密算法”</a>。</p>
-<p>来自:<a href="http://www.ruanyifeng.com/" target="_blank" rel="noopener">阮一峰</a>的网络日志</p>
+<p><strong>Unicode</strong>（中文：万国码、国际码、统一码、单一码）是<a href="https://zh.wikipedia.org/wiki/電腦科學" target="_blank" rel="noopener">计算机科学</a>领域里的一项业界标准。它对世界上大部分的<a href="https://zh.wikipedia.org/wiki/文字系統" target="_blank" rel="noopener">文字系统</a>进行了整理、编码，使得电脑可以用更为简单的方式来呈现和处理文字。</p>
 </blockquote>
-<ul>
-<li>此加密方式产生两个密钥，一个是公钥，一个私钥。两者关系：公钥加密后的密文，只能通过对应的私钥进行解密。</li>
-</ul>
-<h4 id="验证方式"><a href="#验证方式" class="headerlink" title="验证方式"></a>验证方式</h4><p>为了防止中间人攻击：攻击者将自己的公共密钥发给客户端，客户端通过此公钥加密后的信息，将被攻击者的私钥解密，如此一来就会导致信息的泄露。所以采取一下验证方式。</p>
-<h5 id="1-密码验证"><a href="#1-密码验证" class="headerlink" title="1.密码验证"></a>1.密码验证</h5><ul>
-<li><p><strong>通讯过程：</strong></p>
-<p>1.本地段发送数据请求，服务端收到后，将该服务器的公钥发送给服务器</p>
-<p>2.本地端收到该密钥后，账号和密码进行加密，加密完成后，发送给服务端</p>
-<p>3.服务端收到客户端通过公共密钥的信息，通过在本地于该公共密钥对应的私钥，进行解密，账号密码后，与服务器内的值核对校验</p>
-<p>4.当身份验证成功后，将数据返回到客户端</p>
-</li>
-<li><p><img src="https://mmbiz.qpic.cn/mmbiz_png/9hC98DMUibTUNUul0KenWlLmOy1Lqp7mQvdmhS7icLZfH1xIKS7UKcjuIyl8Bt9wyVNWyCmnibdM79p3PxBBTOozg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt=""></p>
-</li>
-</ul>
-<p>但是弊端是，攻击者可能会采取暴力破解的方式，对密码进行猜解，相对密钥验证方式，被破解的概率较大，原因是，通常情况下，密码的程度达不到密钥的复杂程度。</p>
-<h5 id="2-密钥验证"><a href="#2-密钥验证" class="headerlink" title="2.密钥验证"></a>2.密钥验证</h5><ol>
-<li><strong>该验证方式首先要求，客户端将本地的公共密钥放在远端</strong></li>
-<li>当服务器收到客户端的请求时，服务端会生成一个随机数并匹配该用户上传的公钥，对该随机数R加3密。加密之后发送加密数据到客户端</li>
-<li>客户端收到加密信息后，通过自己的私钥，进行解密，得到随机数R，并且将R与会话密钥通过MD5生成摘要，再次发送至服务端</li>
-<li>服务端收到该MD5后，也会对自己产生的R和会话密钥生成MD5摘要，继而匹配两个MD5</li>
-<li>MD5相同时，建立起此次通讯</li>
-</ol>
-<h4 id="RSA算法：非对称加密算法的一种"><a href="#RSA算法：非对称加密算法的一种" class="headerlink" title="RSA算法：非对称加密算法的一种"></a>RSA算法：非对称加密算法的一种</h4><p><strong>1.什么是RSA加密</strong></p>
-<p>RSA是一种非对称加密的加密方式，加密得到的结果1024位，或者是2048位。</p>
-<p>在保证加密的安全性的同时，也导致加密过程相对较慢，不适用于多信息的加密过程。</p>
-<p>为啥子叫：RSA，闪开，大佬来袭：</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/201306/bg2013062702.jpg" alt="img"></p>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>因为RSA是由：三位数学家Rivest、Shamir 和 Adleman 设计了一种算法，因此叫做；RAS！</p>
-<p>毫不夸张的说，由计算机的地方就有RAS加密算法。</p>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>呃。。。。待更吧。。</p>
+<p>说人话就是：将世界上所有的符号都纳入其中，并且都有与之对应的关系；</p>
+<p>（最新的Unicode14.0编码规范要在2021年3月发布，由于疫情故推迟到2021年9月发表。）</p>
+<h6 id="3-3-UTF-8编码"><a href="#3-3-UTF-8编码" class="headerlink" title="3.3 UTF-8编码"></a>3.3 UTF-8编码</h6><p>在Unicode<strong>值得注意的是</strong>：Unicode仅仅规范了符号的编码方式，但是对于存储的方式并没有对此说明。</p>
+<p>因为有的符号仅需要一个字节，有的需要多个字节。比如，汉字<code>严</code>的 Unicode 是十六进制数<code>4E25</code>，转换成二进制数足足有15位（<code>100111000100101</code>），也就是说，这个符号的表示至少需要2个字节。表示其他更大的符号，可能需要3个字节或者4个字节，甚至更多。如果全都以：四个字节去存储，由于较小值的编码点一般使用频率较高，直接使用Unicode编码效率低下，大量浪费内存空间。UTF-8就是来解决这个问题的。即解决Unicode存储问题。（后面的8就是以8位为单元进行编码）</p>
+<p>UTF-8的编码规范：</p>
+<blockquote>
+<p>1）对于单字节的符号，字节的第一位设为<code>0</code>，后面7位为这个符号的 Unicode 码。因此对于英语字母，UTF-8 编码和 ASCII 码是相同的。</p>
+<p>2）对于<code>n</code>字节的符号（<code>n &gt; 1</code>），第一个字节的前<code>n</code>位都设为<code>1</code>，第<code>n + 1</code>位设为<code>0</code>，后面字节的前两位一律设为<code>10</code>。剩下的没有提及的二进制位，全部为这个符号的 Unicode 码。</p>
+</blockquote>
+<p><img src="../aimg/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/image-20200629093733790.png" alt="image-20200629093733790"></p>
+<h4 id="4-结束"><a href="#4-结束" class="headerlink" title="4.结束"></a>4.结束</h4><p>至此，计算机表示语言的方式（即编码规范）基本大势已定，绝大多数都是Unicode编码，UTF-8存储。从此以后互联时代得到了飞速发展。全世界人们尽管语言不同，但是表示语言的方式完全统一！使得全球互联，世界互惠，人们互通！故此致敬各位前辈在字符编码上所付出的努力！</p>
+<p>参考文献：</p>
+<p><a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="noopener">ASCII，Unicode 和 UTF-8  By阮一峰的网络日志</a></p>
+<p><a href="https://zh.wikipedia.org/wiki/UTF-8#UTF-8的編碼方式" target="_blank" rel="noopener">UTF-8 By维基百科</a></p>
+<p><a href="https://www.cnblogs.com/skynet/archive/2011/05/03/2035105.html" target="_blank" rel="noopener">字符集和字符编码 By吴秦</a></p>
 
           
         
@@ -1219,7 +1232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youguang.xyz/2020/06/28/Linux/">
+    <link itemprop="mainEntityOfPage" href="ymyguang.github.io/2021/01/30/Class_Object_instance/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="有光">
@@ -1238,7 +1251,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/28/Linux/" itemprop="url">Linux</a></h1>
+                <a class="post-title-link" href="/2021/01/30/Class_Object_instance/" itemprop="url">Class_Object_instance</a></h1>
         
 
         <div class="post-meta">
@@ -1250,8 +1263,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T16:55:52+08:00">
-                2020-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-30T21:22:04+08:00">
+                2021-01-30
               </time>
             
 
@@ -1290,39 +1303,33 @@
       
         
           
-            <h2 id="Linux上手"><a href="#Linux上手" class="headerlink" title="Linux上手"></a>Linux上手</h2><h3 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h3><ul>
-<li>读[r]</li>
-<li>写[w]</li>
-<li>执行[x] execxte</li>
-</ul>
-<p>命令：ll </p>
-<p>d rwx rwx rwx</p>
+            <h2 id="C-Class（类）"><a href="#C-Class（类）" class="headerlink" title="C++ Class（类）"></a><strong>C++ Class（类）</strong></h2><p><strong>class -》objects</strong></p>
+<p><strong>对象是类的实例化</strong></p>
+<h4 id="类的特点："><a href="#类的特点：" class="headerlink" title="类的特点："></a><strong>类的特点：</strong></h4><p>类是一种数据类型</p>
 <ul>
-<li>d -&gt; 目录  文件类型</li>
-<li>第一组：文件的所属用户</li>
-<li>第二组：文件的所属组</li>
-<li>第三组：其他用户</li>
+<li><strong>封装 Encapsulation</strong></li>
+<li><strong>继承 Inheritance</strong></li>
+<li><strong>多态 Polymorphis</strong></li>
 </ul>
-<p>Linux同Windows一样，都有自己的文件结构，每个文件夹内都存有一类的内容</p>
-<p>就像Windows中的Users文件存档是的用户的数据，windows文件内存储的是系统文件，program文件夹内存放的是安装的软件的文件，等等。类似有着的Linux同样的层级关系</p>
-<ul>
-<li><p><code>boot</code>存放系统启动的相关文件</p>
+<h4 id="类的构成："><a href="#类的构成：" class="headerlink" title="类的构成："></a><strong>类的构成：</strong></h4><ul>
+<li><strong>数据域（data field）By 变量（ variable）</strong></li>
+<li><strong>行为（behavior ） By 函数(Function)</strong></li>
+<li><strong>特殊的两种函数</strong><ul>
+<li><strong>构造函数 constructors ：创建对象时，被自动调用</strong><ul>
+<li><strong>当类中不含有构造函数时，编译器会自己的创建一个<code>默认构函数（default constructors）</code></strong></li>
+</ul>
 </li>
-<li><p>bin：存放二进制可执行文件</p>
+<li><strong>析构函数 destructors ：对象被销毁时，被自动调用</strong></li>
+</ul>
 </li>
-<li><p>etc：存放系统配置文件</p>
+</ul>
+<h4 id="类的用法"><a href="#类的用法" class="headerlink" title="类的用法"></a><strong>类的用法</strong></h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">double</span> radius;</span><br><span class="line">	Circle() &#123;</span><br><span class="line">		radius = <span class="number">1.0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	Circle(<span class="keyword">double</span> r) &#123;</span><br><span class="line">		radius = r;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">getArea</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> (<span class="number">3.14</span> * radius * radius);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	Circle c1;</span><br><span class="line">	Circle c2&#123; <span class="number">2.0</span> &#125;;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; c1.getArea() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; c2.getArea() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="类的成员关系"><a href="#类的成员关系" class="headerlink" title="类的成员关系"></a><strong>类的成员关系</strong></h4><ul>
+<li><p>public关系，类中的成员可以被访问</p>
 </li>
-<li><p>home：存放用户文件</p>
+<li><p>private关系，成员仅仅允许类内部进行访问</p>
 </li>
-<li><p>root：超级用户目录</p>
-</li>
-<li><p>opt：额外安装包</p>
-</li>
-<li><p>usr：系统应用程序usr/local</p>
-</li>
-<li><p>tmp：临时文件</p>
-</li>
-<li></li>
 </ul>
 
           
@@ -1372,7 +1379,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youguang.xyz/2020/06/28/linux%20comman%20command/">
+    <link itemprop="mainEntityOfPage" href="ymyguang.github.io/2021/01/30/linux%20comman%20command/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="有光">
@@ -1391,7 +1398,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/28/linux%20comman%20command/" itemprop="url">linux comman command</a></h1>
+                <a class="post-title-link" href="/2021/01/30/linux%20comman%20command/" itemprop="url">linux comman command</a></h1>
         
 
         <div class="post-meta">
@@ -1403,8 +1410,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T16:55:51+08:00">
-                2020-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-30T21:22:04+08:00">
+                2021-01-30
               </time>
             
 
@@ -1508,7 +1515,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://youguang.xyz/2020/06/28/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="ymyguang.github.io/2021/01/30/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="有光">
@@ -1527,7 +1534,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/28/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">Git学习笔记</a></h1>
+                <a class="post-title-link" href="/2021/01/30/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" itemprop="url">hexo搭建博客</a></h1>
         
 
         <div class="post-meta">
@@ -1539,8 +1546,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-28T16:55:51+08:00">
-                2020-06-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-30T21:22:04+08:00">
+                2021-01-30
               </time>
             
 
@@ -1579,121 +1586,36 @@
       
         
           
-            <h2 id="Git笔记"><a href="#Git笔记" class="headerlink" title="Git笔记"></a><strong>Git笔记</strong></h2><h4 id="1-Git是什么"><a href="#1-Git是什么" class="headerlink" title="1. Git是什么"></a><strong>1. Git是什么</strong></h4><p><strong>Git是世界上最先进的分布式版本控制系统</strong></p>
-<p><strong><img src="https://mmbiz.qpic.cn/mmbiz_png/e1jmIzRpwWiaEynpFwWSmr59icj386rKKxiaCC3m4XHaxHaaqLkYlukTUALnHN74icx3VZyIM3uEXz7JA9ldicwe8BQ/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom: 50%;" /></strong></p>
-<ul>
-<li><strong>Workspace：工作区</strong></li>
-<li><strong>Index/Stage：暂存区</strong></li>
-<li><strong>Repository：仓库区（本地仓库）</strong></li>
-<li><strong>Remote：远程仓库</strong></li>
-</ul>
-<h4 id="2-基本操作"><a href="#2-基本操作" class="headerlink" title="2. 基本操作"></a><strong>2. 基本操作</strong></h4><p><strong>文件操作：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">创建文件：touch 文件名.*</span><br><span class="line">删除文件：rm 文件名</span><br><span class="line">创建文件夹：mkdir 文件夹名</span><br><span class="line">删除文件夹：rm -r 文件夹名</span><br><span class="line">查看文件：cat 文件名</span><br></pre></td></tr></table></figure>
-
-<p><strong>恢复历史版本</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^  退回上一个版本</span><br><span class="line">git reset --hard HEAD^^ 退回上上一个版本</span><br><span class="line">git reset --hard HEAD^^^ 退回上上上一个版本</span><br><span class="line">git reset --hard HEAD~100 退回第100个版本</span><br><span class="line">git reset --hard 版本号 退回版本号版本 (查看版本号:git reflog)</span><br></pre></td></tr></table></figure>
-
-<p><strong>修改相关：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">放弃历史暂存区文件修改：git restor</span><br><span class="line">git chackout -- 文件名</span><br></pre></td></tr></table></figure>
-
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">初始化仓库：git init</span><br></pre></td></tr></table></figure>
-
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">添加文件到暂存区 ：git add filename</span><br></pre></td></tr></table></figure>
-
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">提交文件到仓库：git commit filename</span><br></pre></td></tr></table></figure>
-
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">查看暂存区当前状态：git status</span><br></pre></td></tr></table></figure>
-
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">查看暂存区文件修改情况：git diff</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">查看最新文件修改记录：git log   简洁呈现：git log -pretty&#x3D;online</span><br><span class="line">查看所有文件更改记录：git reflog</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">清空暂存区：git rm --cached filename;</span><br><span class="line">		re .&#x2F;git&#x2F;index  暂存区文件</span><br></pre></td></tr></table></figure>
-
-<p><strong>分支：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">创建分支：git branch [分支名称]</span><br><span class="line">查看分支：git branch -v</span><br><span class="line">切换分支：git checkout [分支名称]</span><br><span class="line">合并分支：git merge [要求被合并的分支名称]</span><br></pre></td></tr></table></figure>
-<p><strong>远程：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">推送：git push origin master</span><br><span class="line">拉取：git pull origin master</span><br><span class="line">pull和clone的区别，pull是拉去远程的某个分支，clone是直接把远程的所有信息都下载下来，比如日志信息，其他分支等</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h4 id="时光穿梭机（版本恢复）"><a href="#时光穿梭机（版本恢复）" class="headerlink" title="时光穿梭机（版本恢复）"></a><strong>时光穿梭机（版本恢复）</strong></h4><p><strong><img src="img/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20200304155405798.png" alt="image-20200304155405798"></strong></p>
-<h5 id="命令说明："><a href="#命令说明：" class="headerlink" title="命令说明："></a><strong>命令说明：</strong></h5><ul>
-<li><strong>git rm 删除工作区文件，并且把删除记录提交到暂存区（git rm[name]相当于：rm + git add[name] ）</strong></li>
-<li><strong>rm 删除工作区的文件。</strong></li>
-</ul>
-<h5 id="恢复的方法："><a href="#恢复的方法：" class="headerlink" title="恢复的方法："></a><strong>恢复的方法：</strong></h5><ul>
-<li><strong>git checkout  filename</strong>      <ul>
-<li><strong>对于checkout的说明：</strong><ul>
-<li><strong>情况一：当暂存区存在该文件时，将暂存区文件恢复到工作区</strong></li>
-<li><strong>情况二：当暂存区未存在该文件时，将版本库中的文件恢复到工作区</strong></li>
-</ul>
+            <h2 id="云服务器hexo搭建踩坑记"><a href="#云服务器hexo搭建踩坑记" class="headerlink" title="云服务器hexo搭建踩坑记"></a>云服务器hexo搭建踩坑记</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近网课结束了，之前在阿里云领的服务器安装的是window系统，目的是刷网课，好的是网课结束了，于是乎就又把服务器安装上了centos了，自己水平很菜，有又什么新奇的玩法，就打算那服务当作博客使用。当初使用的博客程序是：wordpress，对于操作来说基本上是傻瓜式的，所以我想试试用Hexo搭建一个博客。</p>
+<p>那就再网上找搭建教程，本以为搭建的过程会很顺利，但是我完全高估了自己的水平了，哈哈，错误频出，曾今一度陷入大坑。经过1天的折腾，博客最起码可以访问了。</p>
+<p>在这里，我们直接用ftp向云服务传送写好的文档，免去的git安装的操作，配置更加简单。（仅限云服务器，GitHub还是需要git的）</p>
+<h3 id="踩坑一-困惑"><a href="#踩坑一-困惑" class="headerlink" title="踩坑一:困惑"></a>踩坑一:困惑</h3><p>当我在网络上搜索时，网上的都是hexo+GitHub的博客搭建教程（我自己有服务器，其实是不需要用GitHub），刚开始的时候，我跟着一步一步的做，越做越困惑，跟GitHub有什么关系？我有自己的服务器呀！                                             所以在这里说一下为什么有GitHub：</p>
+<p>首先众所周知，GitHub是全球最大的同性交友网站，<del>起作用就是交友</del>，是用来同步自己的代码的。当然玩法也不止如此。再来看看hexo是什么东东。</p>
+<blockquote>
+<p>Hexo是一个快速、简洁且高效的博客框架。 Hexo使用Markdown解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 </p>
+</blockquote>
+<p>没错，hexo并不是一个博客程序，而是一个markdown转html等文件的转换工具！！！！明白这一点，就很好说了。</p>
+<p>hexo+GitHub的工作原理：</p>
+<p>​        1. 自己在本机写好markdown文档</p>
+<p>​        2. hexo经过一系列的处理将文件转换成html等文件</p>
+<ol start="3">
+<li>通过git远程pull将hexo生成的文件推送到GitHub内。</li>
+</ol>
+<p>由于GitHub支持html等文件的渲染和解析，当我们直接访问GitHub中的io域名时，就可以访问到网站了（静态网站）但是有时候GitHub系列的网站在大陆不是很稳定，所以可以结合云服务器来搭建博客。此时云服务器就是一个展示的功能。当我们使用云服务情况下，相比GitHub来展示博客而言，云服务（安装Nginx）会更简便一下。</p>
+<h3 id="踩坑二：报错"><a href="#踩坑二：报错" class="headerlink" title="踩坑二：报错"></a>踩坑二：报错</h3><p>在执行：hexo init 或者是不管执行啥命令都会返回usage，</p>
+<p><img src="../aimg/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/image-20200628174528421.png" alt="image-20200628174528421"></p>
+<p>通过一阵子的搜索，发现了问题！没有在hexo的目录文件下执行hexo命令，直接设置环境环境变量还是可以解决的（我估计时安装hexo不完整，包管理程序安装的软件一般都会自己设置系统变量的）</p>
+<h3 id="踩坑三：本地图片测试正常，但是网页上却不再显示"><a href="#踩坑三：本地图片测试正常，但是网页上却不再显示" class="headerlink" title="踩坑三：本地图片测试正常，但是网页上却不再显示"></a>踩坑三：本地图片测试正常，但是网页上却不再显示</h3><h4 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h4><p>经过测试发现，在md中所写的图片地址，是在public的相对地址，但是在本地的typora软件中，相对的是md的相对地址，而最终网页展示的html文件，因此网页段是相对于html的相对路径。两种参考路径不同，肯定会发生本地显示正常（相对md的相对路径），网页不显示图片（相对html的相对路径）</p>
+<h4 id="解决方式："><a href="#解决方式：" class="headerlink" title="解决方式："></a>解决方式：</h4><p>尽管是在 本地编辑md文件，但是写相对地址的时，要参照html的文件写地址（经测试url填写绝对路径时，图片仍然失效）</p>
+<p>具体步骤 如下：</p>
+<ol>
+<li><p>将所有的文件放在一个文件夹内，且该文件夹内，又可以细分子文件夹来存放图片；</p>
 </li>
-</ul>
+<li><p>相对路径时上一个目录下的img文件，这样设置以后能在本地直接看到图片</p>
 </li>
-<li><strong>git reset HEAD^ filename</strong> <ul>
-<li><strong>作用：把上一个版本filename拉取到暂存区，此时工作区并不存在该文件，但是当我们执行git checkout  filename      文件在工作区就会被找到！</strong></li>
-</ul>
+<li><p>将img文件同步到public内，如此一来生成的html文件也能够按照相对路径的位置，找到指定的图片。</p>
 </li>
-</ul>
-<h5 id="尝试情况："><a href="#尝试情况：" class="headerlink" title="尝试情况："></a><strong>尝试情况：</strong></h5><ul>
-<li><strong>情况一：提交到暂存区，不提交文件库</strong><ul>
-<li><strong>rm删除，工作区文件不存在，暂存区没有同步最新情况</strong><ul>
-<li><strong>恢复</strong><ul>
-<li><strong>git checkout filename  工作区恢复成功，来源暂存区，可以看出add是把文件放到暂存区中</strong></li>
-<li><strong>git reset HEAD filename 恢复失败（考虑原因是因为没有可恢复的仓库）</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>git rm删除，工作区文件不存在，暂存区更新删除记录，即暂存区该文件执行删除操作</strong><ul>
-<li><strong>git checkout filename  恢复失败（原因：因为给git rm=rm + add,此时暂存区该文件的记录，因此checkout会尝试在暂存区中恢复文件到工作区，但是暂存区中只有该文件的删除行为，而文件却不存在，因此恢复失败）</strong></li>
-<li><strong>git reset HEAD^ – filename恢复成功</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><strong>情况二：提交到暂存区，提交到文件库</strong><ul>
-<li><strong>rm删除，工作区文件不存在，暂存区存在</strong><ul>
-<li><strong>git checkout filename  工作区恢复成功</strong></li>
-<li><strong>git reset HEAD^ – filename恢复成功</strong></li>
-</ul>
-</li>
-<li><strong>git rm删除</strong><ul>
-<li><strong>git checkout — filename  恢复失败</strong></li>
-<li><strong>git reset HEAD^ filename 此时操作区并未恢复文件 当在执行：git checkout filename  此时，工作区恢复了该文件</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="3-错误异常"><a href="#3-错误异常" class="headerlink" title="3. 错误异常"></a><strong>3. 错误异常</strong></h4><p><strong>1.</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">执行：git push origin master</span><br><span class="line">报错：error: src refspec master does not match any，远程仓库与本地仓库的之前版本不匹配，无法进行不丢失的推送（合并）</span><br><span class="line">解决方法：git pull origin master     git add   git commoit -m &quot;x&quot;</span><br><span class="line">将远端的仓库拉下来，并于本地合并，之后再进行网络推送就可以了</span><br></pre></td></tr></table></figure>
-
-<p>解决链接：<a href="https://blog.csdn.net/dietime1943/article/details/85682688?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">https://blog.csdn.net/dietime1943/article/details/85682688?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></p>
-<p><strong>2.</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">执行：git push origin master</span><br><span class="line">报错： Updating an unborn branch with changes added to the index.（使用添加到索引中的更改更新未生成的分支。） 其实也就是本地的仓库没有提交，无法推送远程仓库</span><br><span class="line">解决方法：git commit -m &quot;m&quot;&#x2F;&#x2F;作用：把暂存区的操作同步到本地的仓库中</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="情况一："><a href="#情况一：" class="headerlink" title="情况一："></a>情况一：</h4><p>未commit（有add/无add，均无效）</p>
-<p>error: failed to push some refs to ‘<a href="https://github.com/ymyguang/text.git&#39;" target="_blank" rel="noopener">https://github.com/ymyguang/text.git&#39;</a></p>
-<p><img src="img/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20200304210635259.png" alt="image-20200304210635259"></p>
-<p>提交后，commit，推送完成</p>
-<h4 id="情况二："><a href="#情况二：" class="headerlink" title="情况二："></a>情况二：</h4><p><img src="img/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20200304211112056.png" alt="image-20200304211112056"></p>
-<p>本地编辑文件后，GitHub同时编辑文件后，推送本地仓库，失败，此时情况已提交</p>
-<p>操作：pull拉取后，要求输入拉取说明。拉取成功。本地文件填充，（非同行）</p>
-<p>操作后，再次推送，成功。（怀疑是检测版本号）</p>
-<p>尝试使用–rebase ，拉回2.txt，再次提交后，正常，推送正常 </p>
-<p>尝试本地删除，2.txt,不新建，直接推送，成功</p>
-<p>，新建其他文件，推送，成功！</p>
-<p>尝试修改不同文件：在两端同时修改，此次报错，由此可见：只要远端的版本不是与本地的版本书不匹配，将无法push</p>
-<p>分析：如图</p>
-<p><img src="img/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20200304233241691.png" alt="image-20200304233241691"></p>
+</ol>
 
           
         
